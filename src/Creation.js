@@ -1,22 +1,26 @@
 import { useState } from 'react';
-
+import List from "./List.js";
 
 function Creation(){
   const [created, setCreated] = useState(false)
   const [task,setTask] = useState("");
 
+
+
   return (
     <form onSubmit={(e) => {
       e.preventDefault();
       setCreated(true);
-   
+      setTask("");    
 
-      //TODO: Create function to create the task
+
+
     }}
-
-    > 
+    >
+      <label for="itask">Task: </label><br/>
+      <input id="itask" name="task" type="text"></input><br/>
       <textarea
-        placeholder="Tarefa"
+        placeholder="Descrição da tarefa"
         value={task}
         onChange={e => setTask(e.target.value)}
       />
